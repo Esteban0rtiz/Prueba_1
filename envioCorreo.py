@@ -26,7 +26,7 @@ def enviar_correo(destinatario, asunto, cuerpo, usuario_correo, contraseña_corr
         print(f"Error al enviar el correo: {e}")
 
 # Aplicación
-destinatario = "correo_destinatario@example.com"  # Ingresa el destinatario aquí
+destinatario = "ecuaplush010@gmail.com"  # Ingresa el destinatario aquí
 asunto = "Prueba de correo desde Python"
 cuerpo = "Hola, esto es un mensaje de prueba desde Python."
 
