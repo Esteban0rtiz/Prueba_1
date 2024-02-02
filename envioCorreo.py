@@ -2,9 +2,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-from credenciales_correo import usuario_correo, contraseña_correo
-
-def enviar_correo(destinatario, asunto, cuerpo):
+def enviar_correo(destinatario, asunto, cuerpo, usuario_correo, contraseña_correo):
     # Servidor SMTP
     servidor_smtp = "smtp.gmail.com"
     puerto_smtp = 587
@@ -16,7 +14,7 @@ def enviar_correo(destinatario, asunto, cuerpo):
     mensaje['Subject'] = asunto
     mensaje.attach(MIMEText(cuerpo, 'plain'))
 
-    # Conecta al servidor SMTP y envía el correo
+    # Conectar al servidor SMTP y enviar el correo
     try:
         servidor = smtplib.SMTP(servidor_smtp, puerto_smtp)
         servidor.starttls()
@@ -28,8 +26,12 @@ def enviar_correo(destinatario, asunto, cuerpo):
         print(f"Error al enviar el correo: {e}")
 
 # Aplicación
-destinatario = "123test12345@yopmail.com"
+destinatario = "correo_destinatario@example.com"  # Ingresa el destinatario aquí
 asunto = "Prueba de correo desde Python"
 cuerpo = "Hola, esto es un mensaje de prueba desde Python."
 
-enviar_correo(destinatario, asunto, cuerpo)
+# Ingresa tus credenciales aquí
+usuario_correo = "ecuaplush20244@gmail.com"
+contraseña_correo = "zpbk hakh swel ehyg"
+
+enviar_correo(destinatario, asunto, cuerpo, usuario_correo, contraseña_correo)
